@@ -1,1 +1,1 @@
-# GenCor-confidence-intervals
+# Genetic_Correlations_CIs
