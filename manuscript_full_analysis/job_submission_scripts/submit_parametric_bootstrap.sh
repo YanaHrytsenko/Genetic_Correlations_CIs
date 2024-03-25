@@ -9,6 +9,8 @@
 #SBATCH --error="/Code/logs_and_errors_matrix_10X/param_boot_%A_%a.err"
 #SBATCH --array=[1-2000] 
 
+
+#Note: repeat for 3X
 job_id=$SLURM_ARRAY_TASK_ID
 
 kin_mtx_block_path="/Data/Kinship_matrix/freeze.8.JHS_mtx/JHS_kinship_matrix_from_dense_TOPMed_freeze_8.rds"
@@ -21,7 +23,7 @@ rho_e=0
 n_sim=10000
 num_blocks=10 
 
-Rscript 3_parametric_bootstrap.R $job_id $kin_mtx_block_path $kin_mtrx_path $output_path $bin_size $rho_e $n_sim $num_blocks
+Rscript 2_parametric_bootstrap.R $job_id $kin_mtx_block_path $kin_mtrx_path $output_path $bin_size $rho_e $n_sim $num_blocks
 
 
 

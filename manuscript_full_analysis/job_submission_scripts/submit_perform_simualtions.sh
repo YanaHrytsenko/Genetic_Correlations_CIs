@@ -8,6 +8,7 @@
 #SBATCH --error="/Code/logs_and_errors/sim_data_%A_%a.err"
 #SBATCH --array=[1-2000] 
 
+#note: repeat for 10X
 
 job_id=$SLURM_ARRAY_TASK_ID
 
@@ -21,4 +22,4 @@ n_sim=1000
 num_blocks=3 #10X
 
 
-Rscript 4_perform_simulations.R $job_id $kin_mtx_block_path $kin_mtrx_path $output_path $bin_size $rho_e $n_sim $num_blocks
+Rscript 3_perform_simulations.R $job_id $kin_mtx_block_path $kin_mtrx_path $output_path $bin_size $rho_e $n_sim $num_blocks

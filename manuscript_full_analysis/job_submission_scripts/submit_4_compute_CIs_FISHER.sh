@@ -8,6 +8,7 @@
 #SBATCH --output="/Code/logs_and_errors/compute_CI/CI_FISHER_%A_%a.log"
 #SBATCH --error="/Code/logs_and_errors/compute_CI/CI_FISHER_%A_%a.err"
 
+#Note: repeat for 10X
 
 simulation_database_path="/Results/data_simulations/3X"
 
@@ -28,7 +29,7 @@ CI_width_settingA_fisher_path="/Results/CI_results/3X/files_for_plotting/CI_widt
 
 kinMat_zero_diag_path="/Data/Kinship_matrix_zero_diag/3X/JHS_kinship_matrix_from_dense_TOPMed_freeze_8_3X_zero_diag.rds"
 
-Rscript 5_compute_CI_from_parametric_bootstrap_FISHER.R $simulation_database_path $simulation_data_useful_format $bin_size $alpha $cover_prob_all_path_fisher $CI_width_all_path_fisher $CI_width_settingA_fisher_path $kinMat_zero_diag_path
+Rscript 4_compute_CI_from_parametric_bootstrap_FISHER.R $simulation_database_path $simulation_data_useful_format $bin_size $alpha $cover_prob_all_path_fisher $CI_width_all_path_fisher $CI_width_settingA_fisher_path $kinMat_zero_diag_path
 
 
 
